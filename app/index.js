@@ -37,9 +37,8 @@ app.post('/emc2/', function (req, res) {
     var botSpeech = "Energy that the system can create is " + e 
     + " Joules.";
     
-    out = {speech: botSpeech,
-            displayText: botSpeech,
-            data: null};
+    out = {fulfillmentText: botSpeech
+            };
     
     var outString = JSON.stringify(out);
     console.log('Out:' + outString);
