@@ -20,7 +20,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/emc2/', function (req, res) {
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
+    console.log(req.body);
     var weight = req.body.result.parameters.weight;
     var m = weight.amount;
     var weight_unit = weight.unit;
