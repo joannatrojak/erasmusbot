@@ -27,7 +27,25 @@ app.post('/emc2/', function (req, res) {
             pattern = /[0-9]/; 
             var room = req.body.queryResult.parameters.room;
             var result = room.match(pattern);
-            console.log(room.match(pattern)[0]);
+            if (result != null){
+                var floor = result[0]; 
+                switch(floor){
+                    case '1': 
+                        console.log("The room " + room + " located on the ground floor.")
+                    break; 
+                    case '2': 
+                        console.log("The room " + room + " located on the first floor.")
+                    break; 
+                    case '3': 
+                        console.log("The room " + room + " located on the second floor.")
+                    break; 
+                    case 4: 
+                        console.log("The room " + room + " located on the third floor.")
+                    break; 
+                    default: 
+                        console.log("something went wrong");
+                }
+            }
             break; 
         case "location of the class": 
             console.log("location of the class"); 
