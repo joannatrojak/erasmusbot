@@ -24,7 +24,9 @@ app.post('/emc2/', function (req, res) {
     var intent = req.body.queryResult.intent.displayName; 
     switch(intent){
         case "floor plan":
-            console.log("floor plan");
+            pattern = /[A-Z]n{1}[0-9]n+/; 
+            var result = str.match(patt);
+            console.log(result);
             break; 
         case "location of the class": 
             console.log("location of the class"); 
