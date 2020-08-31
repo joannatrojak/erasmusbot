@@ -24,8 +24,15 @@ app.post('/emc2/', function (req, res) {
     var intent = req.body.queryResult.intent.displayName; 
     switch(intent){
         case "floor plan":
-            console.log("ok");
+            console.log("floor plan");
             break; 
+        case "location of the class": 
+            console.log("location of the class"); 
+            break; 
+        case "office hours": 
+            console.log("office hours"); 
+        case "professors": 
+            console.log("professors"); 
         default: 
             console.log("something went wrong");
     }
