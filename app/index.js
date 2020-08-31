@@ -21,7 +21,9 @@ app.get('/', function (req, res) {
 
 app.post('/emc2/', function (req, res) {
     console.log(JSON.stringify(req.body));
-    console.log(req.body.queryResult);
+    
+
+    /*
     var weight = req.body.queryResult.parameters.weight;
     var m = weight.amount;
     var weight_unit = weight.unit;
@@ -43,6 +45,7 @@ app.post('/emc2/', function (req, res) {
     var outString = JSON.stringify(out);
     console.log('Out:' + outString);
     res.send(outString);
+    */
 })
 
 // Spin up the server
