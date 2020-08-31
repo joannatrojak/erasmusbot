@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
 app.post('/emc2/', function (req, res) {
     //console.log(JSON.stringify(req.body));
-    console.log(req.body.intent)
+    console.log(req.body.queryResult.intent)
 
     /*
     var weight = req.body.queryResult.parameters.weight;
