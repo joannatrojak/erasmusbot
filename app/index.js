@@ -23,39 +23,36 @@ app.post('/emc2/', function (req, res) {
     //console.log(JSON.stringify(req.body));
     var intent = req.body.queryResult.intent.displayName; 
     switch(intent){
-        case "floor plan":
-            pattern = /[0-9]/; 
-            var room = req.body.queryResult.parameters.room;
-            var result = room.match(pattern);
-            if (result != null){
-                var floor = result[0]; 
-                switch(floor){
-                    case '1': 
-                        var botSpeech = "The room " + room + " located on the ground floor.";
-                    break; 
-                    case '2': 
-                        var botSpeech = "The room " + room + " located on the first floor.";
-                    break; 
-                    case '3': 
-                        var botSpeech = "The room " + room + " located on the second floor.";
-                    break; 
-                    case 4: 
-                        var botSpeech = "The room " + room + " located on the third floor.";
-                    break; 
-                    default: 
-                        var botSpeech ="something went wrong";
-                }
-                res.setHeader('Content-Type', 'application/json');
-                out = {fulfillmentText: botSpeech
-                };
-        
-                var outString = JSON.stringify(out);
-                console.log('Out:' + outString);
-                res.send(outString);
-            }
-            break; 
         case "location of the class": 
-            console.log("location of the class"); 
+        pattern = /[0-9]/; 
+        var room = req.body.queryResult.parameters.room;
+        var result = room.match(pattern);
+        if (result != null){
+            var floor = result[0]; 
+            switch(floor){
+                case '1': 
+                    var botSpeech = "The room " + room + " located on the ground floor.";
+                break; 
+                case '2': 
+                    var botSpeech = "The room " + room + " located on the first floor.";
+                break; 
+                case '3': 
+                    var botSpeech = "The room " + room + " located on the second floor.";
+                break; 
+                case 4: 
+                    var botSpeech = "The room " + room + " located on the third floor.";
+                break; 
+                default: 
+                    var botSpeech ="something went wrong";
+            }
+            res.setHeader('Content-Type', 'application/json');
+            out = {fulfillmentText: botSpeech
+            };
+    
+            var outString = JSON.stringify(out);
+            console.log('Out:' + outString);
+            res.send(outString);
+        }
             break; 
         case "office hours": 
             console.log("office hours"); 
