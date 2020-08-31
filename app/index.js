@@ -27,7 +27,7 @@ app.post('/emc2/', function (req, res) {
             pattern = /[0-9]/; 
             var room = req.body.queryResult.parameters.room;
             var result = room.match(pattern);
-            console.log(room.match(pattern));
+            console.log(room.match(pattern)[0]);
             break; 
         case "location of the class": 
             console.log("location of the class"); 
