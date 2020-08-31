@@ -21,7 +21,14 @@ app.get('/', function (req, res) {
 
 app.post('/emc2/', function (req, res) {
     //console.log(JSON.stringify(req.body));
-    console.log(req.body.queryResult.intent)
+    var intent = req.body.queryResult.intent.displayName; 
+    switch(intent){
+        case "floor plan":
+            console.log("ok");
+            break; 
+        default: 
+            console.log("something went wrong");
+    }
 
     /*
     var weight = req.body.queryResult.parameters.weight;
