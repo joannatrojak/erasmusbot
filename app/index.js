@@ -17,7 +17,7 @@ app.use(express.static('public'))
 
 // Index route
 app.get('/', function (req, res) {
-    console.log(professors);
+    res.send("hello");
 })
 
 app.post('/emc2/', function (req, res) {
@@ -56,7 +56,7 @@ app.post('/emc2/', function (req, res) {
         }
             break; 
         case "office hours": 
-            console.log("office hours"); 
+            console.log(professors); 
         case "professors": 
             console.log("professors"); 
         default: 
