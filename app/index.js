@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-const professors = require('app/professors.json');
+const fs = require('fs');
 
 const app = express()
 
