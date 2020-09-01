@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
+const professors = require('professors.json');
 
 const app = express()
 
@@ -16,7 +17,7 @@ app.use(express.static('public'))
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('Hello world, I am EinsteinBot!.')
+    res.send(professors);
 })
 
 app.post('/emc2/', function (req, res) {
