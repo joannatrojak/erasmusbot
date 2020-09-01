@@ -62,7 +62,7 @@ app.post('/emc2/', function (req, res) {
             //console.log("Professor: "+professor);
             splitProfessor = professor.split(" ");
             for (i = 0; i < professors.length; i++){
-                if (professors[i]['professor'] == splitProfessor[1] && professors[i]['surname'] == splitProfessor[2]){
+                if (professors[i]['professor'] == splitProfessor[1] && professors[i]['lastName'] == splitProfessor[2]){
                     console.log('okey okey');
                 }
             }
