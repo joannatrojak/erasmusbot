@@ -94,6 +94,26 @@ app.post('/emc2/', function (req, res) {
             res.send(outString);
             }
             break; 
+        case 'website': 
+        var professor = req.body.queryResult.outputContexts[0].parameters.professor; 
+        console.log(professor);
+        if (professor != null){
+            splitProfessor = professor.split(" ");
+        for (i = 0; i < professors.length; i++){
+            if (professors[i]['professor'] == splitProfessor[1] && professors[i]['lastName'] == splitProfessor[2]){
+                var botSpeech = professor + " has the following website: "+ professors[i]["website"]+". Anything else?";                    
+                
+            }
+        };
+        res.setHeader('Content-Type', 'application/json');
+        out = {fulfillmentText: botSpeech
+        };
+
+        var outString = JSON.stringify(out);
+        console.log('Out:' + outString);
+        res.send(outString);
+        }
+            break;
         case "professors": 
             console.log("professors"); 
             break;
