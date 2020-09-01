@@ -17,7 +17,7 @@ app.use(express.static('public'))
 
 // Index route
 app.get('/', function (req, res) {
-    res.send(professors);
+    console.log(professors);
 })
 
 app.post('/emc2/', function (req, res) {
