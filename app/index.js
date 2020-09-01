@@ -62,8 +62,10 @@ app.post('/emc2/', function (req, res) {
             console.log("Professor: "+professor);
         case "professors": 
             console.log("professors"); 
+            break;
         default: 
             console.log("something went wrong");
+            break;
     }
 
     /*
