@@ -75,7 +75,7 @@ app.post('/emc2/', function (req, res) {
             res.send(outString);
             break;
         case 'email': 
-            var professor = req.body.queryResult.outputContext.parameters.professor; 
+            var professor = req.body.queryResult.outputContext.parameters; 
             console.log(professor);
             if (professor != null){
                 splitProfessor = professor.split(" ");
