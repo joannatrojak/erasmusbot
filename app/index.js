@@ -59,7 +59,9 @@ app.post('/emc2/', function (req, res) {
             break; 
         case "office hours": 
             var professor = req.body.queryResult.parameters.professor;
-            console.log("Professor: "+professor);
+            //console.log("Professor: "+professor);
+            console.log(professor.split(" "));
+            break;
         case "professors": 
             console.log("professors"); 
             break;
