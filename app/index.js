@@ -62,7 +62,7 @@ app.post('/emc2/', function (req, res) {
             splitProfessor = professor.split(" ");
             for (i = 0; i < professors.length; i++){
                 if (professors[i]['professor'] == splitProfessor[1] && professors[i]['lastName'] == splitProfessor[2]){
-                    var botSpeech = professor + "is having office hours in "+ professors[i]["room"]+". Anything else?";                    
+                    var botSpeech = professor + " is having office hours in "+ professors[i]["room"]+". Anything else?";                    
                     
                 }
             };
@@ -73,8 +73,25 @@ app.post('/emc2/', function (req, res) {
             var outString = JSON.stringify(out);
             console.log('Out:' + outString);
             res.send(outString);
-            console.log(intent);
             break;
+        case 'email': 
+            if (professor != null){
+                splitProfessor = professor.split(" ");
+            for (i = 0; i < professors.length; i++){
+                if (professors[i]['professor'] == splitProfessor[1] && professors[i]['lastName'] == splitProfessor[2]){
+                    var botSpeech = professor + " has the following email: "+ professors[i]["email"]+". Anything else?";                    
+                    
+                }
+            };
+            res.setHeader('Content-Type', 'application/json');
+            out = {fulfillmentText: botSpeech
+            };
+    
+            var outString = JSON.stringify(out);
+            console.log('Out:' + outString);
+            res.send(outString);
+            }
+            break; 
         case "professors": 
             console.log("professors"); 
             break;
