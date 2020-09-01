@@ -61,9 +61,7 @@ app.post('/emc2/', function (req, res) {
             var professor = req.body.queryResult.parameters.professor;
             //console.log("Professor: "+professor);
             splitProfessor = professor.split(" ");
-            for (professor in professors){
-                console.log(professor["title"]);
-            }
+            console.log(professors);
             break;
         case "professors": 
             console.log("professors"); 
