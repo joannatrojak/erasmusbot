@@ -63,14 +63,7 @@ app.post('/emc2/', function (req, res) {
             splitProfessor = professor.split(" ");
             for (i = 0; i < professors.length; i++){
                 if (professors[i]['professor'] == splitProfessor[1] && professors[i]['lastName'] == splitProfessor[2]){
-                    var botSpeech = professor + "is having office hours in "+ professors[i]["room"]+". Anything else?"; 
-                    res.setHeader('Content-Type', 'application/json');
-                    out = {fulfillmentText: botSpeech
-                    };
-            
-                    var outString = JSON.stringify(out);
-                    console.log('Out:' + outString);
-                    res.send(outString);
+                    var botSpeech = professor + "is having office hours in "+ professors[i]["room"]+". Anything else?";                    
                     console.log(intent);
                 }
                 var botSpeech = "Are you sure you got the name of the professor right?"; 
