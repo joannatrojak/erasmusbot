@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const fs = require('fs');
+let rawdata = fs.readFileSync('professors.json');
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use(express.static('public'))
 // Index route
 app.get('/', function (req, res) {
     res.send("hello");
+    console.log(rawdata);
 })
 
 app.post('/emc2/', function (req, res) {
