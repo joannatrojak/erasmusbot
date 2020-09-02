@@ -95,7 +95,7 @@ app.post('/emc2/', function (req, res) {
             }
             break; 
         case 'website': 
-        var professor = req.body.queryResult.outputContexts[2]; 
+        var professor = req.body.queryResult.outputContexts[1]; 
         console.log(professor);
         if (professor != null){
             splitProfessor = professor.split(" ");
