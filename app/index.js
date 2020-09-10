@@ -59,7 +59,7 @@ app.post('/emc2/', function (req, res) {
             break; 
         case "office hours": 
             var professor = req.body.queryResult.parameters.professor;
-            console.log(professor);
+            console.log(req.body.queryResult);
             break;
             splitProfessor = professor.split(" ");
             for (i = 0; i < professors.length; i++){
