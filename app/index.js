@@ -59,6 +59,8 @@ app.post('/emc2/', function (req, res) {
             break; 
         case "office hours": 
             var professor = req.body.queryResult.parameters.professor;
+            console.log(professor);
+            break;
             splitProfessor = professor.split(" ");
             for (i = 0; i < professors.length; i++){
                 if (professors[i]['professor'] == splitProfessor[1] && professors[i]['lastName'] == splitProfessor[2]){
